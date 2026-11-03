@@ -220,28 +220,124 @@ const users = ["Ahamd", "sami", "Rami"];
 // title.style.fontSize = "50px"
 
 
-const students = [
-    {name: "Mohamamd khoulani", email: "test@gmail.com", major:"CS"},
-    {name: "Ahmad khoulani", email: "test@gmail.com", major:"IT"},
-    {name: "Sami khoulani", email: "test@gmail.com", major:"ITE"}
-]
+// const students = [
+//     {name: "Mohamamd khoulani", email: "test@gmail.com", major:"CS"},
+//     {name: "Ahmad khoulani", email: "test@gmail.com", major:"IT"},
+//     {name: "Sami khoulani", email: "test@gmail.com", major:"ITE"}
+// ]
 
-const tableBody = document.querySelector("tbody");
+// const tableBody = document.querySelector("tbody");
 
-for(const student of students) {
-    let row;
-    if(student.major == "ITE") {
-        row= `<tr style="background-color: green">
-    <td>${student.name}</td>
-    <td>${student.email}</td>
-    <td>${student.major}</td>
-</tr>`
-    }else {
-row= `<tr>
-    <td>${student.name}</td>
-    <td>${student.email}</td>
-    <td>${student.major}</td>
-</tr>`
-    }
-    tableBody.innerHTML += row;
+// for(const student of students) {
+//     let row;
+//     if(student.major == "ITE") {
+//         row= `<tr style="background-color: green">
+//     <td>${student.name}</td>
+//     <td>${student.email}</td>
+//     <td>${student.major}</td>
+// </tr>`
+//     }else {
+// row= `<tr>
+//     <td>${student.name}</td>
+//     <td>${student.email}</td>
+//     <td>${student.major}</td>
+// </tr>`
+//     }
+//     tableBody.innerHTML += row;
+// }
+
+const table = document.querySelector("table");
+
+const title = document.querySelector(".title");
+const button = document.querySelector("button");
+
+
+// function toggleColor() {
+//     title.classList.toggle("red");
+// }
+
+// button.onclick = function() {
+//     title.classList.toggle("red");
+// }
+
+
+
+button.addEventListener("click", function(event) {
+    console.log(event);
+    table.style.display = "none"
+});
+
+button.addEventListener("click", function() {
+    title.classList.toggle("red");
+} )
+let userMessage = document.querySelector("#user");
+const user = sessionStorage.getItem("user");
+
+if(user != null) {
+    userMessage.textContent = `Welcome ${user}`;
+
+}else {
+    userMessage.textContent = "Welcome guest"
 }
+const form = document.querySelector("form");
+const input = document.querySelector("input");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const result = confirm("Are you sure?");
+    const name = input.value;
+    sessionStorage.setItem("user", name);
+    const span = document.createElement("span");
+    if(result) {
+        span.textContent = `Welcom ${name}`;
+    form.appendChild(span);
+    input.value ='';
+    }
+    
+});
+
+// const email = prompt("Enter your email", "mhmmd@test.com");
+// console.log(email);
+
+// window.open("http://google.com/");
+// window.close();
+
+// setTimeout(function() {
+//     const body = document.querySelector("body");
+//     body.style.backgroundColor = "green";
+// }, 4000);
+//     let counter = 1;
+
+// const intervalID = setInterval(function() {
+//     console.log(intervalID)
+//     console.log(`${counter}`);
+//     counter++;
+//     if(counter > 10) {
+//         clearInterval(intervalID);
+//     }
+// }, 1000);
+
+
+// setTimeout(function() {
+// //     window.scrollTo({
+// //     top: 100,
+// //     behavior: "smooth"
+// // })
+// // window.scrollBy({
+// //     top: 100,
+// //     behavior: "smooth"
+// // })
+
+// // console.log(window.innerHeight, innerWidth)
+// }, 2000)
+
+// window.addEventListener("resize", function() {
+//     if(window.innerWidth > 1200) {
+//         console.log("Xl screen")
+//     } 
+//     // console.log(window.innerHeight, innerWidth)
+// })
+
+
+// console.log(navigator.onLine)
+
+
