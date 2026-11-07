@@ -1,4 +1,5 @@
-"use strict"
+import {add} from "./math.js"
+
 
 // let name = "Mohammad";
 // let email = "test@gmail.com";
@@ -145,8 +146,8 @@
 // // title.innerHTML = "<span>Test</span>"
 
 
-const names = [20, true, "Mohammad", false, {email: "test@gmail.com"}];
-const users = ["Ahamd", "sami", "Rami"];
+// const names = [20, true, "Mohammad", false, {email: "test@gmail.com"}];
+// const users = ["Ahamd", "sami", "Rami"];
 
 // console.log(names);
 
@@ -246,10 +247,10 @@ const users = ["Ahamd", "sami", "Rami"];
 //     tableBody.innerHTML += row;
 // }
 
-const table = document.querySelector("table");
+// const table = document.querySelector("table");
 
-const title = document.querySelector(".title");
-const button = document.querySelector("button");
+// const title = document.querySelector(".title");
+// const button = document.querySelector("button");
 
 
 // function toggleColor() {
@@ -262,38 +263,38 @@ const button = document.querySelector("button");
 
 
 
-button.addEventListener("click", function(event) {
-    console.log(event);
-    table.style.display = "none"
-});
+// button.addEventListener("click", function(event) {
+//     console.log(event);
+//     table.style.display = "none"
+// });
 
-button.addEventListener("click", function() {
-    title.classList.toggle("red");
-} )
-let userMessage = document.querySelector("#user");
-const user = sessionStorage.getItem("user");
+// button.addEventListener("click", function() {
+//     title.classList.toggle("red");
+// } )
+// let userMessage = document.querySelector("#user");
+// const user = sessionStorage.getItem("user");
 
-if(user != null) {
-    userMessage.textContent = `Welcome ${user}`;
+// if(user != null) {
+//     userMessage.textContent = `Welcome ${user}`;
 
-}else {
-    userMessage.textContent = "Welcome guest"
-}
-const form = document.querySelector("form");
-const input = document.querySelector("input");
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const result = confirm("Are you sure?");
-    const name = input.value;
-    sessionStorage.setItem("user", name);
-    const span = document.createElement("span");
-    if(result) {
-        span.textContent = `Welcom ${name}`;
-    form.appendChild(span);
-    input.value ='';
-    }
+// }else {
+//     userMessage.textContent = "Welcome guest"
+// }
+// const form = document.querySelector("form");
+// const input = document.querySelector("input");
+// form.addEventListener("submit", function(e) {
+//     e.preventDefault();
+//     const result = confirm("Are you sure?");
+//     const name = input.value;
+//     sessionStorage.setItem("user", name);
+//     const span = document.createElement("span");
+//     if(result) {
+//         span.textContent = `Welcom ${name}`;
+//     form.appendChild(span);
+//     input.value ='';
+//     }
     
-});
+// });
 
 // const email = prompt("Enter your email", "mhmmd@test.com");
 // console.log(email);
@@ -341,3 +342,231 @@ form.addEventListener("submit", function(e) {
 // console.log(navigator.onLine)
 
 
+
+
+
+// function calculator(x,y, operator) {
+//     return operator(x,y);
+// }
+
+// function add(x,y) {
+
+//    return x + y;
+// }
+// function multipy(x,y) {
+//     return x * y;
+// }
+
+// const result = calculator(1,4, multipy);
+
+// console.log(result)
+
+
+// MAP
+
+const numbers = [1,4,6,23,67];
+
+const users = [{firstNama: "Moh", lastName: "kh", email: "test@gmail.com", major: "CS", age: 20}
+    ,{firstNama: "Ahmad", lastName: "kh", email: "test@gmail.com", major: "CS", age: 33}
+    ,{firstNama: "Hadi", lastName: "kh", email: "test@gmail.com", major: "IT", age: 18}
+]
+
+// numbers.map((item, index, array) => {
+//     console.log("Item", item);
+//     console.log("Index", index);
+//     console.log("Array", array);
+// })
+
+// const doubles = numbers.map((item) => {
+//     console.log(item)
+//     return item * 2;
+// })
+// console.log(doubles);
+
+
+// const liteUsers = users.map((user )=> {
+//     return {fullName: `${user.firstNama} ${user.lastName}`, major: user.major}
+// })
+
+// console.log(users);
+// console.log(liteUsers);
+
+
+// const testUsers = [];
+
+// for(let i = 0; i < users.length; i++) {
+//     testUsers.push({fullName: `${users[i].firstNama} ${users[i].lastName}`, major: users[i].major})
+// }
+
+
+// const newUsers = users.map((item, index, array) => {
+//     return item;
+// })
+
+// console.log(newUsers)
+
+// const result = users.filter((user) => {
+//     return user.age <= 20;
+// }).filter(user => user.major == "IT")
+
+// console.log(result)
+
+
+// const csUsers = users.filter(user => user.major == "CS").map((user) => {
+//     return user.firstNama + " " + user.lastName
+// })
+
+// console.log(csUsers)
+
+// const sum = numbers.reduce((acc, item) => {
+//     return acc + item;
+// }, 0);
+
+// console.log(sum);
+
+
+
+// const user = {
+//     firstName: "Test",
+//     lastName: "last",
+//     fullName: function() {
+//         return this.firstName + " " + this.lastName;
+//     }
+// }
+
+// const user1 = {
+//     firstName: "Test",
+//     lastName: "last",
+//     fullName: function() {
+//         return this.firstName + " " + this.lastName;
+//     }
+// }
+
+// class User {
+//     constructor(firstName, lastName) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+
+//     fullName() {
+//        return this.firstName + " " + this.lastName
+//     } 
+// }
+
+
+// const classUser = new User("Mohammad", "Khoulani")
+// const classUser1 = new User("Ahmad", "Sami")
+
+// console.log(classUser);
+// console.log(classUser1);
+
+
+
+// function ProtoUser(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.LastName = lastName;
+// }
+
+// ProtoUser.prototype.fullName = function() {
+//     console.log(this.firstName, this.lastName);
+// }
+
+// prototype.prototype.greet = function() {
+
+// }
+
+// const ex1 = new ProtoUser("tesx", "sdfsd")
+
+
+
+
+// class BankAccount {
+//    #balance= 0;
+
+//    deposit(amount) {
+//     console.log("Amount added")
+//     this.#balance += amount;
+//    }
+
+//    withdraw(amount) {
+//     if(this.#balance > amount) {
+//         console.log("Done!");
+//         this.#balance -= amount;
+//     }else {
+//         console.log("Insuffecinet amount");
+//     }
+//    }
+// }
+
+// const account = new BankAccount();
+
+// account.deposit(100);
+// account.deposit(20);
+// account.withdraw(110);
+// account.withdraw(100);
+
+
+
+
+// class Coffee {
+//     make() {
+//         this.addWater();
+//         this.boileWater();
+//         this.addCoffee();
+//     }
+
+//     addWater() {
+//         console.log("Adding water!");
+//     }
+//     boileWater() {
+//         console.log("Boiling");
+//     }
+//     addCoffee() {
+//         console.log("Adding coffee")
+//     }
+// }
+
+// const coffee = new Coffee();
+// coffee.make()
+
+
+// class Person {
+//     constructor(firstName, lastName, dob) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.dob = dob;
+//     }
+
+//     fullName() {
+//         return this.firstName + " " + this.lastName;
+//     }
+//     age() {
+//         return 2026 - this.dob;
+//     }
+// }
+
+// const person = new Person("Mohammad", "Khoulan", 2000);
+// console.log(person.fullName())
+
+// class Student extends Person {
+//     constructor(firstName, lastName, dob, grade) {
+//         super(firstName, lastName,dob)
+//         this.grade = grade;
+//     }
+//     fullName() {
+//         return `St. ${this.firstName} ${this.lastName}`
+//     }
+//     fullName(id) {
+//         return id + this.firstName + this.lastName
+//     }
+// }
+
+// const student = new Student("Tests", "test 2",1990, 12);
+
+// console.log(student.fullName());
+// console.log(student.firstName);
+
+
+
+const result = x(1,3);
+console.log(result)
